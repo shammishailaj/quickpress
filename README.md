@@ -1,18 +1,32 @@
 # quickpress
-Small tool to automate SSRF wordpress and XMLRPC finder
+
+Scan urls or a single URL against XMLRPC wordpress issues.
+
+usage:
+
+##### Install
+
+Compiling by yourself
+
+```bash
+git clone https://github.com/t0gu/quickpress.git
+cd quickpress
+go build -o quickpress
+./quickpress
+```
+
+##### Usage
+
+* List of URLS
+```bash
+cat urls.txt | quickpress -server http://burpcollaborator.net
+```
+
+* Single URL
+```bash
+quickpress -target https://target.com -server http://burpcollaborator.net
+```
 
 
-
-
-* Usage from src
-  * go run quickpress.go -target https://www.target.com -server evil.com
-* Usage from releases (download at: https://github.com/t0gu/quickpress/releases/tag/1.0 )
-  * ./quickpress -target https://www.target.com -server evil.com
-  
-* Example
-  ![](https://github.com/t0gu/quickpress/blob/master/qf.gif)
-
-
-# TODO
-1. Pass wordlist with targets to test
-2. Maybe brute force module.. 
+#Todo
+--> Tracking where ssrf request come from, when vulnerable.
